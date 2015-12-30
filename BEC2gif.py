@@ -11,9 +11,11 @@ import Figtodat
 from images2gif import writeGif
 
 #parameters
-m = 10      #mass of star
+m = 10      #mass of star (MS)
 O = 100     #number of output images
 N = 59      #number of base gif images
+step = 0.1  #animation time step (s)
+pause = 1.0 #animation ending pause (s)
 
 #import evolution data
 t, Tc, Yc, Lh, Lhe, M, sev, Teff, logL, logpc, Lc, Lv, Mw, Tmax, pTmax, MrTmax = np.loadtxt(str(m)+'.plot1', dtype='string', unpack=True)    
@@ -129,16 +131,9 @@ for i in range(O):
     #append to out list
     out.append(omage.convert("P"))  
 
-out.append(omage.convert("P"))
-out.append(omage.convert("P"))
-out.append(omage.convert("P"))
-out.append(omage.convert("P"))
-out.append(omage.convert("P"))
-out.append(omage.convert("P"))
-out.append(omage.convert("P"))
-out.append(omage.convert("P"))
-out.append(omage.convert("P"))
-out.append(omage.convert("P"))
+for i in range(int(pause/step)):
+    out.append(omage.convert("P"))
+    print "Pause "+str(pause)+"s"
 
 #save output image list
 #print str(len(out)) + " images"
@@ -153,4 +148,4 @@ print "Writing GIF"
 #    image = Image.open("out-"+str(i)+".png")
 #    print "Image "+str(i)+":\t"+image.format+', '+str(image.size)+', '+image.mode
 #    im.append(image.convert("P"))
-writeGif(str(m)+'.gif', out, duration=0.1, dither=0)
+writeGif(str(m)+'.gif', out, duration=step, dither=0)
