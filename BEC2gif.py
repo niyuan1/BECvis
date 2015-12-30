@@ -1,5 +1,10 @@
 # program animates BEC evolution model as gif
 # visualizes time, radius, luminosity, and temperature
+# program depends on modules:
+#   PIL
+#   Pillow (for ImageOps module)
+#   Figtodat
+#   images2gif
 
 from PIL import Image
 from PIL import ImageFilter
