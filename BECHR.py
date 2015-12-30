@@ -4,13 +4,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FormatStrFormatter
 
-#dt parameter
-t = 41
-
 #read pixel to wavelength data
 t25, Tc25, Yc25, Lh25, Lhe25, M25, sev25, Teff25, L25, logpc25, Lc25, Lv25, Mw25, Tmax25, pTmax25, MrTmax25 = np.loadtxt('25.plot1', dtype='string', unpack=True)
 t15, Tc15, Yc15, Lh15, Lhe15, M15, sev15, Teff15, L15, logpc15, Lc15, Lv15, Mw15, Tmax15, pTmax15, MrTmax15 = np.loadtxt('15.plot1', dtype='string', unpack=True)
-t10, Tc10, Yc10, Lh10, Lhe10, M10, sev10, Teff10, L10, logpc10, Lc10, Lv10, Mw10, Tmax10, pTmax10, MrTmax10 = np.loadtxt(str(t)+'t.plot1', dtype='string', unpack=True)
+t10, Tc10, Yc10, Lh10, Lhe10, M10, sev10, Teff10, L10, logpc10, Lc10, Lv10, Mw10, Tmax10, pTmax10, MrTmax10 = np.loadtxt('10.plot1', dtype='string', unpack=True)
 
 #format data
 Teff25 = np.array([float(T.split('D')[0])*10**int(T.split('D')[1]) for T in Teff25])
