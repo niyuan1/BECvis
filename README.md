@@ -6,12 +6,14 @@ BECvis currently contains tools to:
 - Plot Hertzsprung Russel track of multiple BEC models
 - Generate gif visualizing dynamic evolution of BEC model radius, luminosity, and temperature.
 
-# BECHR
-Plots HR diagrams from BEC *.plot1 output files.
-Currently functional, but basic.
+# plot1
+Plots:  HR diagrams 
+        Lt trajectory
+        Tt trajectory
 
-#BEC2gif
+from multiple BEC *.plot1 output files at once.
+
+# BEC2gif
 Generates gif animated image from BEC *.plot1 output files.
 Uses existing gif (of some animated star), and transforms to fit evolution data.
 Plots side by side with animated HR diagram.
-Currently functional, but basic.
